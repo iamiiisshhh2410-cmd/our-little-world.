@@ -1,0 +1,5823 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Georgia, serif;
+}
+
+
+/* =========================
+   COMMON PAGE
+========================= */
+
+.page {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    );
+
+    transition: transform 0.9s ease;
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+.first-page {
+    z-index: 10;
+    transform: translateX(0);
+}
+
+.title {
+    text-align: center;
+    color: #df4d70;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-weight: bold;
+    line-height: 0.95;
+    font-size: clamp(65px, 11vw, 150px);
+    text-shadow: 2px 2px 0 #f5a1b5;
+    transform: rotate(-3deg);
+}
+
+.star {
+    position: absolute;
+    color: #e85c7b;
+    font-size: 45px;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+.star1 {
+    top: 8%;
+    left: 5%;
+}
+
+.star2 {
+    top: 12%;
+    right: 7%;
+}
+
+.star3 {
+    bottom: 15%;
+    left: 8%;
+}
+
+.star4 {
+    bottom: 8%;
+    right: 8%;
+}
+
+.star5 {
+    top: 45%;
+    left: 3%;
+    font-size: 30px;
+}
+
+.heart {
+    position: absolute;
+    color: #e34f75;
+    font-size: 75px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart1 {
+    top: 20%;
+    left: 22%;
+}
+
+.heart2 {
+    top: 27%;
+    right: 20%;
+}
+
+
+/* =========================
+   PAGE 2
+========================= */
+
+.bouquet-page {
+    z-index: 9;
+    flex-direction: column;
+    transform: translateX(100%);
+}
+
+.bouquet-page h2 {
+    color: #df5276;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: clamp(25px, 4vw, 52px);
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.bouquets {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(25px, 7vw, 100px);
+}
+
+.bouquet {
+    width: 180px;
+    height: 260px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+    animation: bouquetFloat 3s ease-in-out infinite;
+}
+
+.bouquet:hover {
+    transform: translateY(-15px) rotate(-3deg) scale(1.08);
+}
+
+.flower {
+    position: absolute;
+    z-index: 3;
+    font-size: 75px;
+    line-height: 1;
+    filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.12));
+}
+
+.bouquet-one .flower:nth-child(1) {
+    left: 15px;
+    top: 20px;
+}
+
+.bouquet-one .flower:nth-child(2) {
+    left: 60px;
+    top: 0;
+}
+
+.bouquet-one .flower:nth-child(3) {
+    left: 105px;
+    top: 25px;
+}
+
+.bouquet-two .flower:nth-child(1) {
+    left: 10px;
+    top: 25px;
+}
+
+.bouquet-two .flower:nth-child(2) {
+    left: 60px;
+    top: 0;
+}
+
+.bouquet-two .flower:nth-child(3) {
+    left: 105px;
+    top: 25px;
+}
+
+.bouquet-three .flower:nth-child(1) {
+    left: 10px;
+    top: 25px;
+}
+
+.bouquet-three .flower:nth-child(2) {
+    left: 60px;
+    top: 0;
+}
+
+.bouquet-three .flower:nth-child(3) {
+    left: 105px;
+    top: 25px;
+}
+
+
+/* Flower colours */
+
+.pink {
+    color: #f184a0;
+}
+
+.rose {
+    color: #d94d72;
+}
+
+.yellow {
+    color: #f2c95c;
+}
+
+.red {
+    color: #e85c72;
+}
+
+.white {
+    color: #fffaf5;
+    text-shadow: 0 0 3px #d98da0;
+}
+
+.pink2 {
+    color: #f49bb1;
+}
+
+.purple {
+    color: #b58bd6;
+}
+
+.pink3 {
+    color: #ed789c;
+}
+
+.yellow2 {
+    color: #efca62;
+}
+
+
+/* Stems */
+
+.stem {
+    position: absolute;
+    width: 5px;
+    height: 145px;
+    background: #78a879;
+    top: 70px;
+    transform-origin: top center;
+    z-index: 1;
+}
+
+.stem1 {
+    left: 75px;
+    transform: rotate(-13deg);
+}
+
+.stem2 {
+    left: 88px;
+    transform: rotate(2deg);
+}
+
+.stem3 {
+    left: 100px;
+    transform: rotate(15deg);
+}
+
+
+/* Wrapping paper */
+
+.paper {
+    position: absolute;
+    width: 145px;
+    height: 105px;
+    left: 18px;
+    top: 140px;
+    background: #f5b7c5;
+
+    clip-path: polygon(
+        8% 0%,
+        92% 0%,
+        100% 100%,
+        50% 75%,
+        0% 100%
+    );
+
+    z-index: 2;
+
+    box-shadow: 0 5px 8px rgba(150,80,100,0.12);
+}
+
+
+/* Decorations */
+
+.little-star {
+    position: absolute;
+    color: #e35c7c;
+    font-size: 40px;
+    animation: twinkle 2s infinite;
+}
+
+.s1 {
+    top: 10%;
+    left: 8%;
+}
+
+.s2 {
+    top: 17%;
+    right: 9%;
+}
+
+.s3 {
+    bottom: 12%;
+    left: 15%;
+}
+
+.bouquet-text {
+    margin-top: 20px;
+    color: #c95c78;
+    font-size: 19px;
+}
+
+
+/* =========================
+   PAGE 3
+========================= */
+
+.message-page {
+    z-index: 8;
+    transform: translateX(100%);
+    padding: 25px;
+    cursor: pointer;
+}
+
+.message-card {
+    width: min(850px, 90vw);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 45px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(100, 120, 140, 0.15);
+}
+
+.photo-container {
+    width: 250px;
+    height: 300px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    transform: rotate(-3deg);
+
+    border: 8px solid white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.message-content {
+    text-align: center;
+    color: #76515c;
+    max-width: 400px;
+}
+
+.message-content h2 {
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    color: #df5276;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.love-line {
+    color: #df5276;
+    font-weight: bold;
+}
+
+.continue-text {
+    color: #c95c78;
+    font-size: 14px !important;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   PAGE 4
+========================= */
+
+.photo-page {
+    z-index: 7;
+    transform: translateX(100%);
+    padding: 25px;
+}
+
+.photo-card {
+    width: min(600px, 85vw);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(100, 120, 140, 0.15);
+}
+
+.photo-card img {
+    width: 280px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 8px solid white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 20px;
+}
+
+.photo-card h2 {
+    color: #df5276;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.photo-card p {
+    color: #76515c;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   PAGE 5
+========================= */
+
+.memory-page {
+    z-index: 6;
+    transform: translateX(100%);
+    padding: 25px;
+    cursor: pointer;
+}
+
+.memory-card {
+    width: min(600px, 85vw);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(100, 120, 140, 0.15);
+}
+
+.memory-card img {
+    width: 200px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 8px solid white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 20px;
+}
+
+.memory-card h2 {
+    color: #df5276;
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.memory-card p {
+    color: #76515c;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   PAGE 6
+========================= */
+
+.letter-page {
+    z-index: 5;
+    transform: translateX(100%);
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    );
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 30px 20px;
+    align-items: flex-start;
+}
+
+.letter-card {
+    width: min(850px, 100%);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(100, 120, 140, 0.15);
+
+    font-family: "Caveat", cursive;
+
+    margin: auto;
+}
+
+.letter-card h2 {
+    text-align: center;
+
+    font-family: "Pacifico", cursive;
+
+    color: #df5276;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+}
+
+.letter-text {
+    font-family: "Caveat", cursive;
+
+    color: #76515c;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    overflow-wrap: break-word;
+}
+
+.letter-text p {
+    margin-bottom: 18px;
+}
+
+.letter-card h3 {
+    text-align: center;
+
+    font-family: "Pacifico", cursive;
+
+    color: #df5276;
+
+    font-size: 30px;
+
+    line-height: 1.25;
+
+    overflow-wrap: break-word;
+
+    margin-top: 25px;
+}
+
+.letter-continue {
+    text-align: center;
+
+    color: #c95c78;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 22px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes twinkle {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bouquetFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    /* PAGE 1 */
+
+    .title {
+        font-size: clamp(55px, 17vw, 90px);
+    }
+
+    .heart {
+        font-size: 50px;
+    }
+
+    .star {
+        font-size: 30px;
+    }
+
+
+    /* PAGE 2 */
+
+    .bouquet-page {
+        padding: 15px;
+    }
+
+    .bouquet-page h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .bouquets {
+        gap: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bouquet {
+        transform: scale(0.62);
+        margin: -25px;
+    }
+
+    .bouquet:hover {
+        transform: scale(0.62);
+    }
+
+    .bouquet-text {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+
+    /* PAGE 3 */
+
+    .message-page {
+        padding: 15px;
+    }
+
+    .message-card {
+        width: 94vw;
+        max-height: 92vh;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px;
+
+        overflow-y: auto;
+    }
+
+    .photo-container {
+        width: 180px;
+        height: 215px;
+    }
+
+    .message-content {
+        width: 100%;
+    }
+
+    .message-content h2 {
+        font-size: 34px;
+        margin-bottom: 12px;
+    }
+
+    .message-content p {
+        font-size: 16px;
+        line-height: 1.45;
+        margin-bottom: 12px;
+    }
+
+
+    /* PAGE 4 */
+
+    .photo-page {
+        padding: 15px;
+    }
+
+    .photo-card {
+        width: 94vw;
+        max-height: 92vh;
+        padding: 18px;
+        overflow-y: auto;
+    }
+
+    .photo-card img {
+        width: 190px;
+        height: 230px;
+    }
+
+    .photo-card h2 {
+        font-size: 30px;
+    }
+
+    .photo-card p {
+        font-size: 16px;
+    }
+
+
+    /* PAGE 5 */
+
+    .memory-page {
+        padding: 15px;
+    }
+
+    .memory-card {
+        width: 94vw;
+        max-height: 92vh;
+        padding: 18px;
+        overflow-y: auto;
+    }
+
+    .memory-card img {
+        width: 170px;
+        height: 205px;
+    }
+
+    .memory-card h2 {
+        font-size: 30px;
+    }
+
+    .memory-card p {
+        font-size: 16px;
+    }
+
+
+    /* PAGE 6 */
+
+    .letter-page {
+        padding: 15px 10px;
+
+        align-items: flex-start;
+
+        overflow-y: auto;
+    }
+
+    .letter-card {
+        width: 100%;
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+
+        margin: 0 auto;
+    }
+
+    .letter-card h2 {
+        font-size: 30px;
+
+        line-height: 1.2;
+
+        margin-bottom: 20px;
+    }
+
+    .letter-text {
+        font-size: 21px;
+
+        line-height: 1.35;
+
+        overflow-wrap: anywhere;
+    }
+
+    .letter-text p {
+        margin-bottom: 16px;
+    }
+
+    .letter-card h3 {
+        font-size: 24px;
+
+        line-height: 1.25;
+
+        word-break: break-word;
+    }
+
+    .letter-continue {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    .title {
+        font-size: 52px;
+    }
+
+    .letter-card {
+        padding: 20px 14px;
+    }
+
+    .letter-card h2 {
+        font-size: 27px;
+    }
+
+    .letter-text {
+        font-size: 19px;
+    }
+
+    .letter-card h3 {
+        font-size: 21px;
+    }
+
+    .photo-container {
+        width: 160px;
+        height: 195px;
+    }
+}
+
+/* =========================
+   PASSWORD ENTRY PAGE
+========================= */
+.password-page {
+    z-index: 20;
+    flex-direction: column;
+    background: repeating-linear-gradient(90deg,#dff3f8 0px,#dff3f8 35px,#ffffff 35px,#ffffff 70px);
+    transition: transform .9s ease, opacity .55s ease;
+}
+.password-box {
+    width: min(88vw, 480px);
+    text-align: center;
+    padding: 42px 32px;
+    border: 3px solid #e56a88;
+    border-radius: 28px;
+    background: rgba(255,255,255,.82);
+    box-shadow: 8px 9px 0 rgba(229,106,136,.18);
+    transform: rotate(-1deg);
+}
+.password-heart { color:#df4d70; font-size:58px; line-height:1; animation:float 3s ease-in-out infinite; }
+.password-box h1 {
+    color:#df4d70; font-family:"Caveat",cursive; font-size:clamp(48px,10vw,72px); line-height:.9; margin:5px 0 18px;
+}
+.password-box p,.password-box label {
+    display:block; color:#a94b67; font-family:"Caveat",cursive; font-size:clamp(20px,4vw,27px); line-height:1.2;
+}
+.password-box label { margin:24px 0 12px; }
+#lovePassword {
+    width:170px; max-width:75%; padding:12px 16px; border:2px dashed #e57a96; border-radius:16px;
+    background:#fff9fb; color:#d84f73; text-align:center; font-size:25px; letter-spacing:9px; outline:none;
+}
+#lovePassword:focus { box-shadow:0 0 0 4px rgba(229,106,136,.13); }
+#unlockButton {
+    display:block; margin:18px auto 0; padding:11px 25px; border:0; border-radius:999px; background:#df5c7c; color:white;
+    font-family:"Caveat",cursive; font-size:24px; cursor:pointer; box-shadow:0 5px 0 #bd3e61;
+}
+#unlockButton:active { transform:translateY(3px); box-shadow:0 2px 0 #bd3e61; }
+.password-error { min-height:24px; margin-top:15px; color:#cf4568; font-family:"Caveat",cursive; font-size:20px; }
+.password-doodle { position:absolute; color:#e65e7e; animation:twinkle 2s infinite ease-in-out; }
+.password-doodle.d1 { top:13%; left:10%; font-size:62px; transform:rotate(-10deg); }
+.password-doodle.d2 { top:18%; right:11%; font-size:38px; }
+.password-doodle.d3 { bottom:13%; right:15%; font-size:48px; }
+@media(max-width:700px){ .password-box{padding:34px 22px}.password-doodle.d1{font-size:42px}.password-doodle.d3{font-size:34px} }
+.cutu-line {
+    color: #d83a4e;
+}
+
+/* Smaller title for Page 1 */
+.first-page .title {
+    font-size: clamp(42px, 6vw, 95px);
+    line-height: 1.05;
+}
+
+/* Keep Cuutttuuu reddish */
+.first-page .cutu-line {
+    color: #d83a4e;
+}
+
+/* Two cute photo frames */
+.page1-photo {
+    position: absolute;
+    width: clamp(150px, 21vw, 330px);
+    height: clamp(120px, 16vw, 250px);
+
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+
+    box-shadow: 5px 6px 0 rgba(232, 76, 112, 0.35);
+
+    z-index: 3;
+}
+
+.page1-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* LEFT PHOTO */
+.photo-left {
+    left: 11%;
+    top: 43%;
+    transform: rotate(9deg);
+}
+
+/* RIGHT PHOTO */
+.photo-right {
+    right: 7%;
+    top: 42%;
+    transform: rotate(-10deg);
+}
+
+/* =========================
+   PHONE VERSION - PAGE 1
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .first-page .title {
+        font-size: 52px;
+        line-height: 1.05;
+        top: 28%;
+        width: 100%;
+    }
+
+    .first-page .cutu-line {
+        font-size: 43px;
+        margin-top: 12px;
+    }
+
+    /* LEFT PHOTO */
+    .first-page .photo-left {
+        width: 145px;
+        height: 125px;
+
+        left: 7%;
+        top: 64%;
+
+        transform: rotate(7deg);
+    }
+
+    /* RIGHT PHOTO */
+    .first-page .photo-right {
+        width: 145px;
+        height: 125px;
+
+        right: 7%;
+        top: 64%;
+
+        transform: rotate(-7deg);
+    }
+
+    .first-page .page1-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+/* FINAL FIX - MOVE PAGE 1 TEXT UP */
+
+@media (max-width: 600px) {
+
+    .first-page .title {
+        transform: translateY(-90px) rotate(-3deg) !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /* LEFT PHOTO - thodi upar */
+    .first-page .photo-left {
+        top: 61% !important;
+    }
+
+    /* RIGHT PHOTO - thodi neeche */
+    .first-page .photo-right {
+        top: 68% !important;
+    }
+
+}
+/* ===== EXTRA CUTE PAGE 1 STICKERS ===== */
+
+.first-page .cute-sticker {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* KISSES 💋 */
+
+.first-page .kiss1 {
+    top: 18%;
+    left: 8%;
+    font-size: 32px;
+    transform: rotate(-18deg);
+}
+
+.first-page .kiss2 {
+    top: 47%;
+    right: 7%;
+    font-size: 28px;
+    transform: rotate(15deg);
+}
+
+
+/* TINY HEARTS */
+
+.first-page .tinyheart1 {
+    top: 38%;
+    left: 8%;
+    font-size: 20px;
+    color: #ed5276;
+    transform: rotate(-15deg);
+}
+
+.first-page .tinyheart2 {
+    top: 54%;
+    right: 12%;
+    font-size: 16px;
+    color: #ed5276;
+}
+
+.first-page .tinyheart3 {
+    bottom: 7%;
+    left: 46%;
+    font-size: 18px;
+    color: #ed5276;
+}
+
+
+/* SPARKLES */
+
+.first-page .sparkle1 {
+    top: 13%;
+    right: 22%;
+    font-size: 25px;
+    color: #f17b98;
+}
+
+.first-page .sparkle2 {
+    top: 49%;
+    left: 15%;
+    font-size: 22px;
+    color: #ed5276;
+}
+
+.first-page .sparkle3 {
+    bottom: 13%;
+    right: 38%;
+    font-size: 24px;
+    color: #f17b98;
+}
+
+
+/* BOW 🎀 */
+
+.first-page .bow1 {
+    bottom: 5%;
+    right: 9%;
+    font-size: 32px;
+    transform: rotate(10deg);
+}
+
+/* Move hollow hearts away from title */
+
+.first-page .heart1 {
+    left: 7% !important;
+    top: 22% !important;
+}
+
+.first-page .heart2 {
+    right: 7% !important;
+    left: auto !important;
+    top: 30% !important;
+}
+
+/* ===== PAGE 1 STICKER FINAL PLACEMENT ===== */
+
+/* Hollow hearts */
+.first-page .heart1 {
+    left: 6% !important;
+    top: 25% !important;
+}
+
+.first-page .heart2 {
+    right: 7% !important;
+    left: auto !important;
+    top: 32% !important;
+}
+
+/* Big stars */
+.first-page .star1 {
+    top: 8% !important;
+    left: 6% !important;
+}
+
+.first-page .star2 {
+    top: 12% !important;
+    right: 7% !important;
+}
+
+/* Put one cute star ABOVE Happy */
+.first-page .star3 {
+    top: 14% !important;
+    left: 34% !important;
+}
+
+/* Remaining stars */
+.first-page .star4 {
+    top: 47% !important;
+    left: 4% !important;
+}
+
+.first-page .star5 {
+    bottom: 8% !important;
+    right: 7% !important;
+}
+
+/* =========================================
+   PAGE 1 - CUTE STICKER PLACEMENT 💕
+   ========================================= */
+
+/* Hollow heart - left */
+.first-page .heart1 {
+    top: 26% !important;
+    left: 7% !important;
+    right: auto !important;
+}
+
+/* Hollow heart - right */
+.first-page .heart2 {
+    top: 35% !important;
+    right: 6% !important;
+    left: auto !important;
+}
+
+
+/* ⭐ BIG STARS */
+
+.first-page .star1 {
+    top: 7% !important;
+    left: 6% !important;
+}
+
+.first-page .star2 {
+    top: 11% !important;
+    right: 7% !important;
+    left: auto !important;
+}
+
+/* move this one away from title */
+.first-page .star3 {
+    top: 48% !important;
+    left: 4% !important;
+}
+
+/* bottom left */
+.first-page .star4 {
+    bottom: 8% !important;
+    left: 9% !important;
+    top: auto !important;
+}
+
+/* bottom right */
+.first-page .star5 {
+    bottom: 7% !important;
+    right: 8% !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+/* ==================================================
+   PAGE 2 — CUTE BOUQUET PAGE
+   ================================================== */
+
+.bouquet-page {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.bouquet-page .bouquet-title {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 400;
+
+    line-height: 1.15;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+
+    color: #e94f73;
+
+    z-index: 5;
+}
+
+
+/* little "for meee" line */
+
+.bouquet-page .bouquet-title span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Caveat", cursive;
+    font-size: 0.52em;
+    font-weight: 600;
+
+    color: #e94f73;
+}
+
+
+/* ---------- BOUQUET AREA ---------- */
+
+.bouquet-page .bouquets {
+    position: absolute;
+
+    top: 34%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(900px, 82%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 4;
+}
+
+
+/* LEFT bouquet */
+
+.bouquet-page .bouquet-one {
+    transform:
+        translateY(35px)
+        rotate(-5deg);
+}
+
+
+/* MIDDLE bouquet */
+
+.bouquet-page .bouquet-two {
+    transform:
+        translateY(-10px)
+        rotate(2deg);
+}
+
+
+/* RIGHT bouquet */
+
+.bouquet-page .bouquet-three {
+    transform:
+        translateY(30px)
+        rotate(5deg);
+}
+
+
+/* smooth movement */
+
+.bouquet-page .bouquet {
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* hover effects */
+
+.bouquet-page .bouquet-one:hover {
+    transform:
+        translateY(27px)
+        rotate(-5deg)
+        scale(1.07);
+}
+
+.bouquet-page .bouquet-two:hover {
+    transform:
+        translateY(-18px)
+        rotate(2deg)
+        scale(1.07);
+}
+
+.bouquet-page .bouquet-three:hover {
+    transform:
+        translateY(22px)
+        rotate(5deg)
+        scale(1.07);
+}
+
+
+/* ---------- BOTTOM TEXT ---------- */
+
+.bouquet-page .bouquet-text {
+    position: absolute;
+
+    left: 50%;
+    bottom: 11%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(25px, 2.6vw, 36px);
+    font-weight: 600;
+
+    color: #e94f73;
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   PAGE 2 DOODLES
+   ================================================== */
+
+.bouquet-page .page2-doodle {
+    position: absolute;
+
+    color: #e94f73;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* ♡ LEFT */
+
+.bouquet-page .p2-heart1 {
+    top: 27%;
+    left: 6%;
+
+    font-size: 53px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* ♡ RIGHT */
+
+.bouquet-page .p2-heart2 {
+    top: 48%;
+    right: 5%;
+
+    font-size: 49px;
+
+    transform: rotate(12deg);
+}
+
+
+/* 💋 TOP RIGHT */
+
+.bouquet-page .p2-kiss1 {
+    top: 20%;
+    right: 13%;
+
+    font-size: 34px;
+
+    transform: rotate(13deg);
+}
+
+
+/* 💋 LOWER LEFT */
+
+.bouquet-page .p2-kiss2 {
+    bottom: 17%;
+    left: 8%;
+
+    font-size: 30px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* ✦ LEFT SPARKLE */
+
+.bouquet-page .p2-sparkle1 {
+    top: 17%;
+    left: 20%;
+
+    font-size: 28px;
+
+    transform: rotate(10deg);
+}
+
+
+/* ✧ RIGHT SPARKLE */
+
+.bouquet-page .p2-sparkle2 {
+    bottom: 20%;
+    right: 9%;
+
+    font-size: 30px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* ♥ LITTLE HEART LEFT */
+
+.bouquet-page .p2-miniheart1 {
+    top: 53%;
+    left: 4%;
+
+    font-size: 20px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* ♥ LITTLE HEART BOTTOM */
+
+.bouquet-page .p2-miniheart2 {
+    bottom: 7%;
+    right: 22%;
+
+    font-size: 19px;
+
+    transform: rotate(10deg);
+}
+
+
+/* ==================================================
+   PHONE VIEW 📱
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .bouquet-page .bouquet-title {
+        top: 7%;
+
+        width: 88%;
+
+        font-size: 38px;
+    }
+
+
+    .bouquet-page .bouquet-title span {
+        margin-top: 3px;
+
+        font-size: 23px;
+    }
+
+
+    /* stack bouquets vertically on phone */
+
+    .bouquet-page .bouquets {
+        top: 25%;
+        bottom: auto;
+
+        width: 100%;
+        height: 55%;
+
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+    .bouquet-page .bouquet-one {
+        transform:
+            translateX(-45px)
+            rotate(-5deg)
+            scale(0.75);
+    }
+
+
+    .bouquet-page .bouquet-two {
+        transform:
+            translateX(48px)
+            rotate(5deg)
+            scale(0.75);
+    }
+
+
+    .bouquet-page .bouquet-three {
+        transform:
+            translateX(-35px)
+            rotate(-4deg)
+            scale(0.75);
+    }
+
+
+    /* no weird hover jump on phone */
+
+    .bouquet-page .bouquet-one:hover {
+        transform:
+            translateX(-45px)
+            rotate(-5deg)
+            scale(0.79);
+    }
+
+    .bouquet-page .bouquet-two:hover {
+        transform:
+            translateX(48px)
+            rotate(5deg)
+            scale(0.79);
+    }
+
+    .bouquet-page .bouquet-three:hover {
+        transform:
+            translateX(-35px)
+            rotate(-4deg)
+            scale(0.79);
+    }
+
+
+    .bouquet-page .bouquet-text {
+        bottom: 7%;
+
+        font-size: 25px;
+    }
+
+
+    /* PHONE DOODLES */
+
+    .bouquet-page .p2-heart1 {
+        top: 20%;
+        left: 5%;
+
+        font-size: 38px;
+    }
+
+
+    .bouquet-page .p2-heart2 {
+        top: 54%;
+        right: 5%;
+
+        font-size: 37px;
+    }
+
+
+    .bouquet-page .p2-kiss1 {
+        top: 19%;
+        right: 7%;
+
+        font-size: 26px;
+    }
+
+
+    .bouquet-page .p2-kiss2 {
+        bottom: 16%;
+        left: 7%;
+
+        font-size: 25px;
+    }
+
+
+    .bouquet-page .p2-sparkle1 {
+        top: 16%;
+        left: 19%;
+
+        font-size: 21px;
+    }
+
+
+    .bouquet-page .p2-sparkle2 {
+        bottom: 19%;
+        right: 8%;
+
+        font-size: 23px;
+    }
+
+
+    .bouquet-page .p2-miniheart1 {
+        top: 45%;
+        left: 5%;
+    }
+
+
+    .bouquet-page .p2-miniheart2 {
+        bottom: 5%;
+        right: 18%;
+    }
+}
+
+/* ==========================================
+   PAGE 2 - FIX BOUQUET SIZE ON PHONE 📱
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    /* bouquet container */
+    .bouquet-page .bouquets {
+        top: 27% !important;
+        height: 55% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+
+        gap: 35px !important;
+    }
+
+
+    /* MAKE ALL 3 BOUQUETS SMALLER */
+    .bouquet-page .bouquet {
+        scale: 0.55 !important;
+        flex-shrink: 0 !important;
+    }
+
+
+    /* LEFT */
+    .bouquet-page .bouquet-one {
+        transform:
+            translateX(-65px)
+            rotate(-5deg) !important;
+    }
+
+
+    /* MIDDLE */
+    .bouquet-page .bouquet-two {
+        transform:
+            translateX(60px)
+            rotate(4deg) !important;
+    }
+
+
+    /* LAST */
+    .bouquet-page .bouquet-three {
+        transform:
+            translateX(-55px)
+            rotate(-4deg) !important;
+    }
+
+
+    /* stop hover from making them huge */
+    .bouquet-page .bouquet-one:hover {
+        transform:
+            translateX(-65px)
+            rotate(-5deg) !important;
+    }
+
+    .bouquet-page .bouquet-two:hover {
+        transform:
+            translateX(60px)
+            rotate(4deg) !important;
+    }
+
+    .bouquet-page .bouquet-three:hover {
+        transform:
+            translateX(-55px)
+            rotate(-4deg) !important;
+    }
+}
+
+/* =========================================
+   PAGE 2 — CLEAN PHONE BOUQUET LAYOUT
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* TITLE */
+    .bouquet-page .bouquet-title {
+        top: 7% !important;
+        width: 92% !important;
+        font-size: 38px !important;
+        line-height: 1.1 !important;
+    }
+
+    .bouquet-page .bouquet-title span {
+        font-size: 23px !important;
+        margin-top: 8px !important;
+    }
+
+
+    /* THREE BOUQUETS IN ONE ROW */
+    .bouquet-page .bouquets {
+        position: absolute !important;
+
+        top: 39% !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        width: 94% !important;
+        height: auto !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+
+        gap: 4px !important;
+    }
+
+
+    /* SMALLER BOUQUETS */
+    .bouquet-page .bouquet {
+        scale: 0.52 !important;
+        flex: 0 0 auto !important;
+    }
+
+
+    /* slightly playful positioning */
+
+    .bouquet-page .bouquet-one {
+        transform:
+            translateY(20px)
+            rotate(-5deg) !important;
+    }
+
+    .bouquet-page .bouquet-two {
+        transform:
+            translateY(-15px)
+            rotate(2deg) !important;
+    }
+
+    .bouquet-page .bouquet-three {
+        transform:
+            translateY(22px)
+            rotate(5deg) !important;
+    }
+
+
+    /* REMOVE HOVER MOVEMENT ON PHONE */
+
+    .bouquet-page .bouquet-one:hover {
+        transform:
+            translateY(20px)
+            rotate(-5deg) !important;
+    }
+
+    .bouquet-page .bouquet-two:hover {
+        transform:
+            translateY(-15px)
+            rotate(2deg) !important;
+    }
+
+    .bouquet-page .bouquet-three:hover {
+        transform:
+            translateY(22px)
+            rotate(5deg) !important;
+    }
+
+
+    /* BOTTOM TEXT */
+
+    .bouquet-page .bouquet-text {
+        bottom: 15% !important;
+
+        width: 90% !important;
+
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+    }
+
+
+    /* DECORATIONS */
+
+    .bouquet-page .p2-heart1 {
+        top: 23% !important;
+        left: 5% !important;
+    }
+
+    .bouquet-page .p2-heart2 {
+        top: 59% !important;
+        right: 5% !important;
+    }
+
+    .bouquet-page .p2-kiss1 {
+        top: 21% !important;
+        right: 7% !important;
+    }
+
+    .bouquet-page .p2-kiss2 {
+        bottom: 10% !important;
+        left: 7% !important;
+    }
+
+    .bouquet-page .p2-sparkle1 {
+        top: 18% !important;
+        left: 18% !important;
+    }
+
+    .bouquet-page .p2-sparkle2 {
+        bottom: 18% !important;
+        right: 8% !important;
+    }
+
+    .bouquet-page .p2-miniheart1 {
+        top: 47% !important;
+        left: 5% !important;
+    }
+
+    .bouquet-page .p2-miniheart2 {
+        bottom: 7% !important;
+        right: 18% !important;
+    }
+}
+
+/* =========================================
+   PAGE 2 - CUTE BOUQUET PAGE
+========================================= */
+
+.bouquet-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 55px 18px 35px;
+}
+
+
+/* ---------- HEADING ---------- */
+
+.bouquet-heading {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.bouquet-heading h2 {
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 400;
+
+    color: #ef4f75;
+    line-height: 1.15;
+
+    text-shadow:
+        2px 3px 0 #f8b0c2;
+}
+
+.bouquet-heading p {
+    margin: 5px 0 0;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(27px, 5vw, 40px);
+    font-weight: 600;
+
+    color: #ef4f75;
+}
+
+
+/* =========================================
+   BOUQUET CONTAINER
+========================================= */
+
+.bouquets {
+    width: min(900px, 94%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(20px, 6vw, 80px);
+
+    margin-top: 80px;
+}
+
+
+/* =========================================
+   INDIVIDUAL BOUQUET
+========================================= */
+
+.bouquet {
+    width: 210px;
+    height: 300px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.bouquet:hover {
+    transform: translateY(-10px) scale(1.05);
+    filter: drop-shadow(0 12px 10px rgba(235, 79, 117, 0.20));
+}
+
+
+/* staggered placement */
+
+.bouquet-one {
+    transform: rotate(-5deg) translateY(15px);
+}
+
+.bouquet-two {
+    transform: translateY(-15px);
+}
+
+.bouquet-three {
+    transform: rotate(5deg) translateY(15px);
+}
+
+
+/* =========================================
+   FLOWERS
+========================================= */
+
+.bouquet-flowers {
+    position: absolute;
+
+    width: 190px;
+    height: 120px;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+}
+
+.cute-flower {
+    position: absolute;
+
+    font-size: 62px;
+    line-height: 1;
+
+    filter: drop-shadow(
+        0 5px 4px rgba(0,0,0,0.10)
+    );
+}
+
+.cute-flower.f1 {
+    left: 5px;
+    top: 38px;
+}
+
+.cute-flower.f2 {
+    left: 43px;
+    top: 5px;
+}
+
+.cute-flower.f3 {
+    left: 82px;
+    top: 35px;
+}
+
+.cute-flower.f4 {
+    left: 118px;
+    top: 2px;
+}
+
+.cute-flower.f5 {
+    left: 137px;
+    top: 45px;
+}
+
+
+/* =========================================
+   STEMS
+========================================= */
+
+.cute-stems {
+    position: absolute;
+
+    top: 90px;
+    left: 50%;
+
+    width: 70px;
+    height: 110px;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+.cute-stems span {
+    position: absolute;
+
+    width: 7px;
+    height: 110px;
+
+    background: #6cab70;
+
+    border-radius: 10px;
+
+    transform-origin: bottom;
+}
+
+.cute-stems span:nth-child(1) {
+    left: 20px;
+    transform: rotate(-11deg);
+}
+
+.cute-stems span:nth-child(2) {
+    left: 33px;
+}
+
+.cute-stems span:nth-child(3) {
+    left: 46px;
+    transform: rotate(11deg);
+}
+
+
+/* =========================================
+   WRAPPING PAPER
+========================================= */
+
+.cute-wrapper {
+    position: absolute;
+
+    width: 170px;
+    height: 150px;
+
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+.wrapper-left,
+.wrapper-right {
+    position: absolute;
+
+    width: 100px;
+    height: 140px;
+
+    background: #f7adc0;
+}
+
+.wrapper-left {
+    left: 5px;
+
+    clip-path: polygon(
+        0 0,
+        100% 28%,
+        75% 100%,
+        20% 78%
+    );
+}
+
+.wrapper-right {
+    right: 5px;
+
+    clip-path: polygon(
+        0 28%,
+        100% 0,
+        80% 78%,
+        25% 100%
+    );
+}
+
+.wrapper-center {
+    position: absolute;
+
+    width: 105px;
+    height: 125px;
+
+    left: 50%;
+    top: 22px;
+
+    transform: translateX(-50%);
+
+    background: #ffc4d3;
+
+    clip-path: polygon(
+        10% 0,
+        90% 0,
+        72% 100%,
+        28% 100%
+    );
+}
+
+
+/* =========================================
+   BOW
+========================================= */
+
+.bouquet-bow {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform: translateX(-50%);
+
+    font-size: 42px;
+
+    z-index: 7;
+
+    filter: drop-shadow(
+        0 4px 3px rgba(0,0,0,0.10)
+    );
+}
+
+
+/* =========================================
+   LITTLE TAG
+========================================= */
+
+.bouquet-tag {
+    position: absolute;
+
+    right: 2px;
+    bottom: 65px;
+
+    background: #fffaf8;
+
+    color: #e94d72;
+
+    padding: 5px 9px;
+
+    border-radius: 4px;
+
+    font-family: "Caveat", cursive;
+    font-size: 17px;
+    font-weight: 600;
+
+    transform: rotate(9deg);
+
+    z-index: 8;
+
+    box-shadow:
+        2px 3px 5px rgba(0,0,0,0.10);
+}
+
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.bouquet-text {
+    margin-top: 55px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(25px, 4vw, 35px);
+    font-weight: 600;
+
+    color: #ef4f75;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+.p2-deco {
+    position: absolute;
+
+    color: #ef4f75;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.deco1 {
+    top: 12%;
+    left: 8%;
+    font-size: 45px;
+}
+
+.deco2 {
+    top: 28%;
+    left: 5%;
+    font-size: 52px;
+}
+
+.deco3 {
+    top: 20%;
+    right: 7%;
+    font-size: 48px;
+}
+
+.deco4 {
+    bottom: 18%;
+    left: 7%;
+    font-size: 31px;
+}
+
+.deco5 {
+    bottom: 12%;
+    right: 8%;
+    font-size: 43px;
+}
+
+.deco6 {
+    top: 48%;
+    right: 5%;
+    font-size: 48px;
+}
+
+
+/* =========================================
+   PHONE VIEW
+========================================= */
+
+@media (max-width: 600px) {
+
+    .bouquet-page {
+        padding:
+            55px 10px
+            25px;
+
+        min-height: 100vh;
+    }
+
+
+    .bouquet-heading h2 {
+        font-size: 47px;
+    }
+
+    .bouquet-heading p {
+        font-size: 29px;
+    }
+
+
+    .bouquets {
+        width: 100%;
+
+        margin-top: 95px;
+
+        gap: 2px;
+
+        justify-content: space-evenly;
+    }
+
+
+    .bouquet {
+        width: 115px;
+        height: 190px;
+    }
+
+
+    /* flowers */
+
+    .bouquet-flowers {
+        width: 115px;
+        height: 75px;
+    }
+
+    .cute-flower {
+        font-size: 38px;
+    }
+
+    .cute-flower.f1 {
+        left: 0;
+        top: 25px;
+    }
+
+    .cute-flower.f2 {
+        left: 22px;
+        top: 2px;
+    }
+
+    .cute-flower.f3 {
+        left: 45px;
+        top: 27px;
+    }
+
+    .cute-flower.f4 {
+        left: 65px;
+        top: 0;
+    }
+
+    .cute-flower.f5 {
+        left: 78px;
+        top: 29px;
+    }
+
+
+    /* stems */
+
+    .cute-stems {
+        top: 60px;
+
+        width: 50px;
+        height: 80px;
+    }
+
+    .cute-stems span {
+        height: 80px;
+        width: 5px;
+    }
+
+    .cute-stems span:nth-child(1) {
+        left: 14px;
+    }
+
+    .cute-stems span:nth-child(2) {
+        left: 23px;
+    }
+
+    .cute-stems span:nth-child(3) {
+        left: 32px;
+    }
+
+
+    /* wrapping */
+
+    .cute-wrapper {
+        width: 105px;
+        height: 100px;
+
+        bottom: 5px;
+    }
+
+    .wrapper-left,
+    .wrapper-right {
+        width: 65px;
+        height: 95px;
+    }
+
+    .wrapper-center {
+        width: 68px;
+        height: 83px;
+
+        top: 14px;
+    }
+
+
+    /* bow */
+
+    .bouquet-bow {
+        font-size: 27px;
+
+        bottom: 34px;
+    }
+
+
+    /* tag */
+
+    .bouquet-tag {
+        font-size: 11px;
+
+        padding: 3px 5px;
+
+        bottom: 42px;
+        right: -1px;
+    }
+
+
+    /* cute staggered positions */
+
+    .bouquet-one {
+        transform:
+            rotate(-6deg)
+            translateY(20px);
+    }
+
+    .bouquet-two {
+        transform:
+            translateY(-15px);
+    }
+
+    .bouquet-three {
+        transform:
+            rotate(6deg)
+            translateY(20px);
+    }
+
+
+    .bouquet-text {
+        margin-top: 80px;
+
+        font-size: 27px;
+
+        padding: 0 30px;
+    }
+
+
+    /* decorations slightly smaller */
+
+    .deco1 {
+        font-size: 32px;
+        top: 13%;
+    }
+
+    .deco2 {
+        font-size: 38px;
+        top: 27%;
+        left: 3%;
+    }
+
+    .deco3 {
+        font-size: 36px;
+        top: 22%;
+        right: 4%;
+    }
+
+    .deco4 {
+        font-size: 25px;
+        bottom: 15%;
+    }
+
+    .deco5 {
+        font-size: 31px;
+        bottom: 10%;
+    }
+
+    .deco6 {
+        font-size: 36px;
+        top: 55%;
+        right: 3%;
+    }
+}
+
+/* =====================================================
+   PAGE 2 FINAL MOBILE FIX
+   Paste this at the VERY END of style.css
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* WHOLE PAGE */
+    #page2.bouquet-page {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 0 8px 25px !important;
+    }
+
+
+    /* =============================================
+       HEADING - TAKE IT UP
+    ============================================= */
+
+    #page2 .bouquet-heading {
+        position: relative;
+        z-index: 20;
+
+        width: 100%;
+        text-align: center;
+
+        margin-top: 55px !important;
+    }
+
+    #page2 .bouquet-heading h2 {
+        margin: 0 !important;
+
+        font-family: "Pacifico", cursive;
+        font-size: 45px !important;
+        font-weight: 400;
+
+        line-height: 1.05;
+
+        color: #ef4f75;
+
+        text-shadow:
+            2px 3px 0 #f8b0c2;
+    }
+
+    #page2 .bouquet-heading p {
+        margin: 8px 0 0 !important;
+
+        font-family: "Caveat", cursive;
+        font-size: 29px !important;
+        font-weight: 600;
+
+        color: #ef4f75;
+    }
+
+
+    /* =============================================
+       BOUQUETS
+    ============================================= */
+
+    #page2 .bouquets {
+        position: relative;
+
+        width: 100% !important;
+        height: 300px !important;
+
+        margin-top: 60px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-evenly !important;
+
+        gap: 4px !important;
+
+        z-index: 10;
+    }
+
+
+    #page2 .bouquet {
+        position: relative !important;
+
+        width: 125px !important;
+        height: 205px !important;
+
+        flex: 0 0 125px !important;
+
+        cursor: pointer;
+    }
+
+
+    /* make them slightly uneven/cute */
+
+    #page2 .bouquet-one {
+        transform:
+            translateY(17px)
+            rotate(-5deg) !important;
+    }
+
+    #page2 .bouquet-two {
+        transform:
+            translateY(-17px)
+            rotate(1deg) !important;
+    }
+
+    #page2 .bouquet-three {
+        transform:
+            translateY(14px)
+            rotate(5deg) !important;
+    }
+
+
+    /* =============================================
+       FLOWERS - BIGGER
+    ============================================= */
+
+    #page2 .bouquet-flowers {
+        position: absolute;
+
+        top: 0 !important;
+        left: 50% !important;
+
+        width: 125px !important;
+        height: 90px !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 6;
+    }
+
+    #page2 .cute-flower {
+        position: absolute;
+
+        font-size: 40px !important;
+        line-height: 1;
+
+        filter:
+            drop-shadow(0 3px 3px rgba(0,0,0,.12));
+    }
+
+
+    #page2 .cute-flower.f1 {
+        left: -2px !important;
+        top: 29px !important;
+    }
+
+    #page2 .cute-flower.f2 {
+        left: 23px !important;
+        top: 4px !important;
+    }
+
+    #page2 .cute-flower.f3 {
+        left: 47px !important;
+        top: 29px !important;
+    }
+
+    #page2 .cute-flower.f4 {
+        left: 69px !important;
+        top: 3px !important;
+    }
+
+    #page2 .cute-flower.f5 {
+        left: 86px !important;
+        top: 31px !important;
+    }
+
+
+    /* =============================================
+       STEMS
+    ============================================= */
+
+    #page2 .cute-stems {
+        position: absolute;
+
+        top: 67px !important;
+        left: 50% !important;
+
+        width: 55px !important;
+        height: 92px !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 2;
+    }
+
+    #page2 .cute-stems span {
+        position: absolute;
+
+        width: 5px !important;
+        height: 92px !important;
+
+        background: #68a96c;
+
+        border-radius: 10px;
+        transform-origin: bottom;
+    }
+
+    #page2 .cute-stems span:nth-child(1) {
+        left: 14px !important;
+        transform: rotate(-13deg);
+    }
+
+    #page2 .cute-stems span:nth-child(2) {
+        left: 25px !important;
+    }
+
+    #page2 .cute-stems span:nth-child(3) {
+        left: 36px !important;
+        transform: rotate(13deg);
+    }
+
+
+    /* =============================================
+       WRAPPING PAPER
+    ============================================= */
+
+    #page2 .cute-wrapper {
+        position: absolute;
+
+        width: 116px !important;
+        height: 112px !important;
+
+        left: 50% !important;
+        bottom: 0 !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 3;
+    }
+
+    #page2 .wrapper-left,
+    #page2 .wrapper-right {
+        width: 73px !important;
+        height: 105px !important;
+
+        background: #f5a9bd;
+    }
+
+    #page2 .wrapper-center {
+        width: 74px !important;
+        height: 93px !important;
+
+        top: 15px !important;
+
+        background: #ffc3d2;
+    }
+
+
+    /* =============================================
+       BOW + TAG
+    ============================================= */
+
+    #page2 .bouquet-bow {
+        left: 50% !important;
+        bottom: 38px !important;
+
+        font-size: 30px !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 8;
+    }
+
+    #page2 .bouquet-tag {
+        right: -2px !important;
+        bottom: 47px !important;
+
+        padding: 3px 5px !important;
+
+        font-family: "Caveat", cursive;
+        font-size: 11px !important;
+
+        background: #fffaf8;
+        color: #e94d72;
+
+        transform: rotate(8deg);
+
+        z-index: 9;
+    }
+
+
+    /* =============================================
+       BOTTOM TEXT
+    ============================================= */
+
+    #page2 .bouquet-text {
+        position: relative;
+
+        margin: 30px 0 0 !important;
+        padding: 0 35px;
+
+        font-family: "Caveat", cursive;
+        font-size: 27px !important;
+        font-weight: 600;
+
+        line-height: 1.05;
+
+        text-align: center;
+
+        color: #ef4f75;
+
+        z-index: 20;
+    }
+
+
+    /* =============================================
+       ORIGINAL DECORATIONS - REPOSITION
+    ============================================= */
+
+    #page2 .deco1 {
+        top: 18% !important;
+        left: 7% !important;
+
+        font-size: 34px !important;
+    }
+
+    #page2 .deco2 {
+        top: 29% !important;
+        left: 3% !important;
+
+        font-size: 38px !important;
+    }
+
+    #page2 .deco3 {
+        top: 19% !important;
+        right: 5% !important;
+
+        font-size: 37px !important;
+    }
+
+    #page2 .deco4 {
+        bottom: 19% !important;
+        left: 7% !important;
+
+        font-size: 25px !important;
+    }
+
+    #page2 .deco5 {
+        bottom: 10% !important;
+        right: 7% !important;
+
+        font-size: 35px !important;
+    }
+
+    #page2 .deco6 {
+        top: 33% !important;
+        right: 3% !important;
+
+        font-size: 38px !important;
+    }
+
+
+    /* =============================================
+       EXTRA STICKERS
+    ============================================= */
+
+    #page2 .sticker {
+        position: absolute;
+        z-index: 4;
+
+        pointer-events: none;
+
+        filter:
+            drop-shadow(0 2px 2px rgba(0,0,0,.06));
+    }
+
+
+    #page2 .sticker-bow {
+        top: 22px;
+        left: 20px;
+
+        font-size: 36px;
+
+        transform: rotate(-10deg);
+    }
+
+
+    #page2 .sticker-heart-top {
+        top: 38px;
+        right: 24px;
+
+        font-size: 25px;
+        color: #ef4f75;
+
+        transform: rotate(9deg);
+    }
+
+
+    #page2 .sticker-sparkle-left {
+        top: 235px;
+        left: 22px;
+
+        font-size: 25px;
+        color: #ef4f75;
+    }
+
+
+    #page2 .sticker-mini-heart {
+        top: 265px;
+        right: 38px;
+
+        font-size: 20px;
+        color: #ef4f75;
+    }
+
+
+    #page2 .sticker-kiss {
+        bottom: 150px;
+        left: 19px;
+
+        font-size: 34px;
+
+        transform: rotate(-13deg);
+    }
+
+
+    #page2 .sticker-envelope {
+        bottom: 52px;
+        left: 70px;
+
+        font-size: 29px;
+
+        transform: rotate(-8deg);
+    }
+
+
+    #page2 .sticker-bow-bottom {
+        bottom: 45px;
+        right: 55px;
+
+        font-size: 34px;
+
+        transform: rotate(8deg);
+    }
+
+
+    #page2 .sticker-heart-bottom {
+        bottom: 145px;
+        right: 18px;
+
+        font-size: 28px;
+        color: #ef4f75;
+    }
+}
+
+/* ==================================================
+   PAGE 2 — CUTE BOUQUET PAGE
+   ================================================== */
+
+.bouquet-page {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.bouquet-page .bouquet-title {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 400;
+
+    line-height: 1.15;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+
+    color: #e94f73;
+
+    z-index: 5;
+}
+
+
+/* little "for meee" line */
+
+.bouquet-page .bouquet-title span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Caveat", cursive;
+    font-size: 0.52em;
+    font-weight: 600;
+
+    color: #e94f73;
+}
+
+
+/* ---------- BOUQUET AREA ---------- */
+
+.bouquet-page .bouquets {
+    position: absolute;
+
+    top: 34%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(900px, 82%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 4;
+}
+
+
+/* LEFT bouquet */
+
+.bouquet-page .bouquet-one {
+    transform:
+        translateY(35px)
+        rotate(-5deg);
+}
+
+
+/* MIDDLE bouquet */
+
+.bouquet-page .bouquet-two {
+    transform:
+        translateY(-10px)
+        rotate(2deg);
+}
+
+
+/* RIGHT bouquet */
+
+.bouquet-page .bouquet-three {
+    transform:
+        translateY(30px)
+        rotate(5deg);
+}
+
+
+/* smooth movement */
+
+.bouquet-page .bouquet {
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* hover effects */
+
+.bouquet-page .bouquet-one:hover {
+    transform:
+        translateY(27px)
+        rotate(-5deg)
+        scale(1.07);
+}
+
+.bouquet-page .bouquet-two:hover {
+    transform:
+        translateY(-18px)
+        rotate(2deg)
+        scale(1.07);
+}
+
+.bouquet-page .bouquet-three:hover {
+    transform:
+        translateY(22px)
+        rotate(5deg)
+        scale(1.07);
+}
+
+
+/* ---------- BOTTOM TEXT ---------- */
+
+.bouquet-page .bouquet-text {
+    position: absolute;
+
+    left: 50%;
+    bottom: 11%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(25px, 2.6vw, 36px);
+    font-weight: 600;
+
+    color: #e94f73;
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   PAGE 2 DOODLES
+   ================================================== */
+
+.bouquet-page .page2-doodle {
+    position: absolute;
+
+    color: #e94f73;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* ♡ LEFT */
+
+.bouquet-page .p2-heart1 {
+    top: 27%;
+    left: 6%;
+
+    font-size: 53px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* ♡ RIGHT */
+
+.bouquet-page .p2-heart2 {
+    top: 48%;
+    right: 5%;
+
+    font-size: 49px;
+
+    transform: rotate(12deg);
+}
+
+
+/* 💋 TOP RIGHT */
+
+.bouquet-page .p2-kiss1 {
+    top: 20%;
+    right: 13%;
+
+    font-size: 34px;
+
+    transform: rotate(13deg);
+}
+
+
+/* 💋 LOWER LEFT */
+
+.bouquet-page .p2-kiss2 {
+    bottom: 17%;
+    left: 8%;
+
+    font-size: 30px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* ✦ LEFT SPARKLE */
+
+.bouquet-page .p2-sparkle1 {
+    top: 17%;
+    left: 20%;
+
+    font-size: 28px;
+
+    transform: rotate(10deg);
+}
+
+
+/* ✧ RIGHT SPARKLE */
+
+.bouquet-page .p2-sparkle2 {
+    bottom: 20%;
+    right: 9%;
+
+    font-size: 30px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* ♥ LITTLE HEART LEFT */
+
+.bouquet-page .p2-miniheart1 {
+    top: 53%;
+    left: 4%;
+
+    font-size: 20px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* ♥ LITTLE HEART BOTTOM */
+
+.bouquet-page .p2-miniheart2 {
+    bottom: 7%;
+    right: 22%;
+
+    font-size: 19px;
+
+    transform: rotate(10deg);
+}
+
+
+/* ==================================================
+   PHONE VIEW 📱
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .bouquet-page .bouquet-title {
+        top: 7%;
+
+        width: 88%;
+
+        font-size: 38px;
+    }
+
+
+    .bouquet-page .bouquet-title span {
+        margin-top: 3px;
+
+        font-size: 23px;
+    }
+
+
+    /* stack bouquets vertically on phone */
+
+    .bouquet-page .bouquets {
+        top: 25%;
+        bottom: auto;
+
+        width: 100%;
+        height: 55%;
+
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+    .bouquet-page .bouquet-one {
+        transform:
+            translateX(-45px)
+            rotate(-5deg)
+            scale(0.75);
+    }
+
+
+    .bouquet-page .bouquet-two {
+        transform:
+            translateX(48px)
+            rotate(5deg)
+            scale(0.75);
+    }
+
+
+    .bouquet-page .bouquet-three {
+        transform:
+            translateX(-35px)
+            rotate(-4deg)
+            scale(0.75);
+    }
+
+
+    /* no weird hover jump on phone */
+
+    .bouquet-page .bouquet-one:hover {
+        transform:
+            translateX(-45px)
+            rotate(-5deg)
+            scale(0.79);
+    }
+
+    .bouquet-page .bouquet-two:hover {
+        transform:
+            translateX(48px)
+            rotate(5deg)
+            scale(0.79);
+    }
+
+    .bouquet-page .bouquet-three:hover {
+        transform:
+            translateX(-35px)
+            rotate(-4deg)
+            scale(0.79);
+    }
+
+
+    .bouquet-page .bouquet-text {
+        bottom: 7%;
+
+        font-size: 25px;
+    }
+
+
+    /* PHONE DOODLES */
+
+    .bouquet-page .p2-heart1 {
+        top: 20%;
+        left: 5%;
+
+        font-size: 38px;
+    }
+
+
+    .bouquet-page .p2-heart2 {
+        top: 54%;
+        right: 5%;
+
+        font-size: 37px;
+    }
+
+
+    .bouquet-page .p2-kiss1 {
+        top: 19%;
+        right: 7%;
+
+        font-size: 26px;
+    }
+
+
+    .bouquet-page .p2-kiss2 {
+        bottom: 16%;
+        left: 7%;
+
+        font-size: 25px;
+    }
+
+
+    .bouquet-page .p2-sparkle1 {
+        top: 16%;
+        left: 19%;
+
+        font-size: 21px;
+    }
+
+
+    .bouquet-page .p2-sparkle2 {
+        bottom: 19%;
+        right: 8%;
+
+        font-size: 23px;
+    }
+
+
+    .bouquet-page .p2-miniheart1 {
+        top: 45%;
+        left: 5%;
+    }
+
+
+    .bouquet-page .p2-miniheart2 {
+        bottom: 5%;
+        right: 18%;
+    }
+}
+
+/* PAGE 2 - BOUQUETS ONE BELOW THE OTHER */
+
+@media (max-width: 600px) {
+
+    #page2 {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-bottom: 80px !important;
+        overflow: visible !important;
+    }
+
+    #page2 .bouquets {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        margin-top: 110px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 45px !important;
+    }
+
+    #page2 .bouquet {
+        width: 125px !important;
+        height: 205px !important;
+
+        flex: none !important;
+    }
+
+    /* No weird left/right movement */
+    #page2 .bouquet-one {
+        transform: rotate(-4deg) !important;
+    }
+
+    #page2 .bouquet-two {
+        transform: rotate(3deg) !important;
+    }
+
+    #page2 .bouquet-three {
+        transform: rotate(-3deg) !important;
+    }
+
+    /* Bottom text comes after all 3 bouquets */
+    #page2 .bouquet-text {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        width: 100% !important;
+
+        margin-top: 55px !important;
+
+        text-align: center !important;
+        white-space: normal !important;
+    }
+}
+
+/* ===== PAGE 2: SMALL VERTICAL BOUQUETS ===== */
+
+@media (max-width: 600px) {
+
+    /* bouquet container */
+    #page2 .bouquets {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        margin-top: 65px !important;
+        gap: 12px !important;
+    }
+
+    /* make bouquets smaller */
+    #page2 .bouquet {
+        width: 95px !important;
+        height: 155px !important;
+        flex: none !important;
+        margin: 0 !important;
+    }
+
+    /* keep all three close */
+    #page2 .bouquet-one {
+        transform: rotate(-3deg) !important;
+    }
+
+    #page2 .bouquet-two {
+        transform: rotate(2deg) !important;
+    }
+
+    #page2 .bouquet-three {
+        transform: rotate(-2deg) !important;
+    }
+
+    /* flowers smaller */
+    #page2 .bouquet-flowers {
+        width: 95px !important;
+        height: 65px !important;
+    }
+
+    #page2 .cute-flower {
+        font-size: 30px !important;
+    }
+
+    #page2 .cute-flower.f1 {
+        left: 0 !important;
+        top: 22px !important;
+    }
+
+    #page2 .cute-flower.f2 {
+        left: 18px !important;
+        top: 2px !important;
+    }
+
+    #page2 .cute-flower.f3 {
+        left: 36px !important;
+        top: 21px !important;
+    }
+
+    #page2 .cute-flower.f4 {
+        left: 52px !important;
+        top: 2px !important;
+    }
+
+    #page2 .cute-flower.f5 {
+        left: 65px !important;
+        top: 23px !important;
+    }
+
+    /* stems */
+    #page2 .cute-stems {
+        top: 48px !important;
+        height: 68px !important;
+        transform: translateX(-50%) scale(.8) !important;
+    }
+
+    /* pink wrapper */
+    #page2 .cute-wrapper {
+        width: 85px !important;
+        height: 78px !important;
+        bottom: 0 !important;
+    }
+
+    #page2 .wrapper-left,
+    #page2 .wrapper-right {
+        width: 53px !important;
+        height: 73px !important;
+    }
+
+    #page2 .wrapper-center {
+        width: 55px !important;
+        height: 65px !important;
+        top: 10px !important;
+    }
+
+    /* bow */
+    #page2 .bouquet-bow {
+        font-size: 22px !important;
+        bottom: 25px !important;
+    }
+
+    /* little tag */
+    #page2 .bouquet-tag {
+        font-size: 9px !important;
+        bottom: 31px !important;
+        right: -5px !important;
+        padding: 2px 4px !important;
+    }
+
+    /* bottom text */
+    #page2 .bouquet-text {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        margin-top: 25px !important;
+        width: 100% !important;
+
+        font-size: 25px !important;
+        text-align: center !important;
+    }
+}
+
+/* ===== PAGE 3 FIX - PHOTO SHOULD NOT CROP ===== */
+
+#page3 {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    align-items: flex-start !important;
+    padding: 35px 0 !important;
+}
+
+#page3 .message-card {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    margin: 0 auto !important;
+    padding: 25px 20px 45px !important;
+
+    flex-shrink: 0 !important;
+}
+
+/* PHOTO */
+
+#page3 .photo-container {
+    position: relative !important;
+
+    width: 85% !important;
+    max-width: 320px !important;
+    height: auto !important;
+
+    margin: 0 auto 30px !important;
+
+    overflow: hidden !important;
+
+    border: 10px solid white;
+    border-radius: 30px;
+
+    flex-shrink: 0 !important;
+}
+
+#page3 .photo-container img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* TEXT */
+
+#page3 .message-content {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    #page3 {
+        height: 100vh !important;
+        overflow-y: auto !important;
+        padding: 25px 0 50px !important;
+    }
+
+    #page3 .message-card {
+        width: 90% !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    #page3 .photo-container {
+        width: 82% !important;
+        height: auto !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+#page4 .photo-card img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    border-radius: 20px !important;
+}
+
+/* ===== PAGE 5 - TALL COLLAGE IMAGE FIX ===== */
+
+#page5 .memory-card img {
+    display: block !important;
+
+    width: 82% !important;
+    height: auto !important;
+
+    max-height: none !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    margin: 0 auto 35px !important;
+
+    border-radius: 25px !important;
+
+    /* cute white photo border */
+    border: 10px solid white !important;
+
+    box-sizing: border-box !important;
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ===== PHONE ===== */
+
+/* ===== PAGE 5 IMAGE FIX ===== */
+
+#page5 .memory-card img {
+    display: block !important;
+
+    width: 280px !important;
+    max-width: 85% !important;
+
+    height: 420px !important;
+
+    margin: 20px auto 35px !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    border-radius: 25px !important;
+    background: white !important;
+}
+
+/* =========================================
+   PAGE 6 - MY FAV PICS OF U
+========================================= */
+
+#page6.fav-pics-page {
+
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* ================= TITLE ================= */
+
+#page6.fav-pics-page h2 {
+
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 48px;
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #ed4e73;
+
+    text-shadow: 3px 3px 0 #f8b1c2;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* little subtitle */
+
+#page6 .fav-subtitle {
+
+    margin: 8px 0 25px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 29px;
+    font-weight: 600;
+
+    color: #ed4e73;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= PHOTO CARD ================= */
+
+#page6 .fav-photo-card {
+
+    position: relative;
+
+    width: min(330px, 78vw);
+    height: 420px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        10px 12px 0 #f6b5c7,
+        0 15px 35px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+
+    z-index: 2;
+}
+
+
+/* when tapped */
+
+#page6 .fav-photo-card:active {
+
+    transform: rotate(0deg) scale(0.97);
+
+}
+
+
+/* ================= IMAGE ================= */
+
+#page6 .fav-photo-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 20px;
+
+    transition: opacity 0.18s ease;
+}
+
+
+/* ================= TAP ME ================= */
+
+#page6 .tap-hint {
+
+    position: absolute;
+
+    right: -12px;
+    bottom: -14px;
+
+    padding: 5px 14px;
+
+    background: #fff7fa;
+
+    border-radius: 20px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    color: #ed4e73;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+
+    transform: rotate(5deg);
+}
+
+
+/* ================= MESSAGE ================= */
+
+#page6 .fav-message {
+
+    width: min(420px, 88vw);
+
+    margin: 30px 0 4px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #815761;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================= COUNTER ================= */
+
+#page6 .fav-counter {
+
+    margin-top: 7px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+
+    color: #ed4e73;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================= DECORATIONS ================= */
+
+#page6 .fav-deco {
+
+    position: absolute;
+
+    color: #ed4e73;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+#page6 .fav-d1 {
+
+    top: 10%;
+    left: 8%;
+
+    font-size: 35px;
+}
+
+
+#page6 .fav-d2 {
+
+    top: 20%;
+    right: 7%;
+
+    font-size: 45px;
+}
+
+
+#page6 .fav-d3 {
+
+    bottom: 15%;
+    left: 7%;
+
+    font-size: 38px;
+
+    transform: rotate(-12deg);
+}
+
+
+#page6 .fav-d4 {
+
+    bottom: 8%;
+    right: 8%;
+
+    font-size: 30px;
+}
+
+
+#page6 .fav-d5 {
+
+    top: 48%;
+    left: 5%;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #page6.fav-pics-page {
+
+        min-height: 100vh;
+
+        padding: 30px 15px;
+
+        justify-content: center;
+    }
+
+
+    #page6.fav-pics-page h2 {
+
+        font-size: 39px;
+
+    }
+
+
+    #page6 .fav-subtitle {
+
+        font-size: 26px;
+
+        margin-top: 5px;
+        margin-bottom: 22px;
+    }
+
+
+    #page6 .fav-photo-card {
+
+        width: 72vw;
+
+        max-width: 290px;
+
+        height: 380px;
+
+    }
+
+
+    #page6 .fav-message {
+
+        width: 88%;
+
+        font-size: 24px;
+
+        margin-top: 27px;
+    }
+
+
+    #page6 .fav-counter {
+
+        font-size: 17px;
+
+    }
+
+
+    #page6 .tap-hint {
+
+        font-size: 18px;
+
+    }
+
+}
+
+/* =========================================
+   PAGE 6 - MY FAV PICS OF U
+========================================= */
+
+#page6.fav-pics-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* TITLE */
+
+#page6.fav-pics-page > h2 {
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 48px;
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #ed4e73;
+
+    text-shadow: 3px 3px 0 #f8b1c2;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* SUBTITLE */
+
+#page6 .fav-subtitle {
+    margin: 7px 0 25px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 29px;
+    font-weight: 600;
+
+    color: #ed4e73;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================
+   SLIDES
+========================================= */
+
+#page6 .fav-slide {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* ONLY CURRENT PHOTO SHOWS */
+
+#page6 .fav-slide.active {
+    display: flex;
+}
+
+
+/* =========================================
+   PHOTO CARD
+========================================= */
+
+#page6 .fav-photo-card {
+    position: relative;
+
+    width: min(330px, 76vw);
+    height: 410px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        10px 12px 0 #f6b5c7,
+        0 15px 30px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+
+    transform: rotate(-2deg);
+
+    transition: transform 0.2s ease;
+}
+
+
+#page6 .fav-photo-card:active {
+    transform: rotate(0deg) scale(0.97);
+}
+
+
+/* IMAGE */
+
+#page6 .fav-photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 20px;
+}
+
+
+/* TAP LABEL */
+
+#page6 .tap-hint {
+    position: absolute;
+
+    right: -12px;
+    bottom: -14px;
+
+    padding: 5px 14px;
+
+    background: #fff7fa;
+
+    border-radius: 20px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    color: #ed4e73;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+
+    transform: rotate(5deg);
+}
+
+
+/* MESSAGE */
+
+#page6 .fav-message {
+    width: min(420px, 88vw);
+
+    margin: 30px auto 3px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #815761;
+}
+
+
+/* COUNTER */
+
+#page6 .fav-counter {
+    margin: 7px 0 0;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+
+    color: #ed4e73;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+#page6 .fav-deco {
+    position: absolute;
+
+    color: #ed4e73;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+#page6 .fav-d1 {
+    top: 9%;
+    left: 7%;
+
+    font-size: 34px;
+}
+
+
+#page6 .fav-d2 {
+    top: 21%;
+    right: 7%;
+
+    font-size: 44px;
+}
+
+
+#page6 .fav-d3 {
+    bottom: 15%;
+    left: 6%;
+
+    font-size: 38px;
+
+    transform: rotate(-12deg);
+}
+
+
+#page6 .fav-d4 {
+    bottom: 8%;
+    right: 8%;
+
+    font-size: 30px;
+}
+
+
+#page6 .fav-d5 {
+    top: 49%;
+    left: 5%;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #page6.fav-pics-page {
+        min-height: 100vh;
+
+        padding: 25px 15px;
+
+        justify-content: center;
+    }
+
+
+    #page6.fav-pics-page > h2 {
+        font-size: 39px;
+    }
+
+
+    #page6 .fav-subtitle {
+        font-size: 26px;
+
+        margin-top: 5px;
+        margin-bottom: 22px;
+    }
+
+
+    #page6 .fav-photo-card {
+        width: 70vw;
+
+        max-width: 285px;
+
+        height: 370px;
+    }
+
+
+    #page6 .fav-message {
+        width: 88%;
+
+        margin-top: 27px;
+
+        font-size: 24px;
+    }
+
+
+    #page6 .fav-counter {
+        font-size: 17px;
+    }
+
+
+    #page6 .tap-hint {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   FINAL PAGE 6 FIX
+========================================= */
+
+#page6.fav-pics-page {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    z-index: 5 !important;
+
+    transform: translateX(100%);
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 25px 15px !important;
+    text-align: center !important;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    ) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* TITLE */
+
+#page6 > h2 {
+    display: block !important;
+    visibility: visible !important;
+
+    margin: 0 !important;
+
+    font-family: "Pacifico", cursive !important;
+    font-size: 42px !important;
+
+    color: #ed4e73 !important;
+
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+
+/* SUBTITLE */
+
+#page6 .fav-subtitle {
+    display: block !important;
+    visibility: visible !important;
+
+    margin: 6px 0 22px !important;
+
+    font-family: "Caveat", cursive !important;
+    font-size: 26px !important;
+
+    color: #ed4e73 !important;
+
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+
+/* HIDE ALL PHOTOS */
+
+#page6 .fav-slide {
+    display: none !important;
+}
+
+
+/* SHOW ONLY ACTIVE PHOTO */
+
+#page6 .fav-slide.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    width: 100% !important;
+
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+
+/* PHOTO CARD */
+
+#page6 .fav-photo-card {
+    display: block !important;
+
+    width: 70vw !important;
+    max-width: 285px !important;
+    height: 370px !important;
+
+    padding: 10px !important;
+
+    background: white !important;
+
+    border-radius: 28px !important;
+
+    box-shadow:
+        10px 12px 0 #f6b5c7,
+        0 15px 30px rgba(0,0,0,0.12) !important;
+}
+
+
+/* PHOTO */
+
+#page6 .fav-photo-card img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border-radius: 20px !important;
+}
+
+
+/* MESSAGE */
+
+#page6 .fav-message {
+    display: block !important;
+
+    margin: 27px auto 0 !important;
+
+    font-family: "Caveat", cursive !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+
+    color: #815761 !important;
+}
+
+
+/* COUNTER */
+
+#page6 .fav-counter {
+    display: block !important;
+
+    margin-top: 7px !important;
+
+    font-family: "Caveat", cursive !important;
+    font-size: 17px !important;
+
+    color: #ed4e73 !important;
+}
+
+/* =========================================
+   PAGE 7 - JUST FOR YOU LETTER
+========================================= */
+
+#page7.letter-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 4;
+
+    /* Keep Page 7 hidden until photo 6 is clicked */
+    transform: translateX(100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 35px 20px 60px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    );
+
+    transition: transform 0.8s ease;
+}
+
+
+/* =========================================
+   LETTER CARD
+========================================= */
+
+#page7 .letter-card {
+    position: relative;
+
+    width: min(600px, 88vw);
+
+    margin: auto;
+
+    padding: 35px 30px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 3px solid #f3a8bb;
+    border-radius: 28px;
+
+    box-shadow:
+        8px 9px 0 rgba(237, 78, 115, 0.15),
+        0 15px 35px rgba(80, 90, 110, 0.12);
+}
+
+
+/* cute little heart decoration */
+
+#page7 .letter-card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 12px;
+    left: 18px;
+
+    font-size: 34px;
+    color: #ed4e73;
+
+    transform: rotate(-15deg);
+}
+
+
+/* little star */
+
+#page7 .letter-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    font-size: 27px;
+    color: #ed4e73;
+
+    transform: rotate(12deg);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+#page7 .letter-card h2 {
+    margin: 5px 0 28px;
+
+    text-align: center;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 43px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #ed4e73;
+
+    text-shadow: 2px 2px 0 #f8c1cf;
+}
+
+
+/* =========================================
+   LETTER TEXT
+========================================= */
+
+#page7 .letter-text {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    color: #76515c;
+
+    text-align: left;
+}
+
+
+/* EACH PARAGRAPH */
+
+#page7 .letter-text p {
+    margin: 0 0 20px;
+}
+
+
+/* =========================================
+   MAIN LOVE LINE
+========================================= */
+
+#page7 .letter-text .main-love {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    color: #ed4e73;
+}
+
+
+/* =========================================
+   I LOVEEEE YOUUU
+========================================= */
+
+#page7 .letter-text h3 {
+    margin: 10px auto 5px;
+
+    text-align: center;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 31px;
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    color: #ed4e73;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #page7.letter-page {
+        padding: 25px 14px 45px;
+
+        align-items: flex-start;
+
+        overflow-y: auto;
+    }
+
+
+    #page7 .letter-card {
+        width: 92%;
+
+        margin: 15px auto 30px;
+
+        padding: 30px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    #page7 .letter-card h2 {
+        font-size: 35px;
+
+        margin-bottom: 24px;
+    }
+
+
+    #page7 .letter-text {
+        font-size: 22px;
+
+        line-height: 1.35;
+    }
+
+
+    #page7 .letter-text p {
+        margin-bottom: 18px;
+    }
+
+
+    #page7 .letter-text .main-love {
+        font-size: 26px;
+
+        margin-top: 28px;
+    }
+
+
+    #page7 .letter-text h3 {
+        font-size: 26px;
+
+        line-height: 1.35;
+    }
+
+
+    #page7 .letter-card::before {
+        font-size: 29px;
+
+        top: 10px;
+        left: 14px;
+    }
+
+
+    #page7 .letter-card::after {
+        font-size: 23px;
+
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    #page7 .letter-card {
+        width: 94%;
+
+        padding: 27px 18px;
+    }
+
+
+    #page7 .letter-card h2 {
+        font-size: 32px;
+    }
+
+
+    #page7 .letter-text {
+        font-size: 21px;
+    }
+
+
+    #page7 .letter-text .main-love {
+        font-size: 24px;
+    }
+
+
+    #page7 .letter-text h3 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================
+   PAGE 6 - AUTO IMAGE SIZE / NO CROPPING
+========================================= */
+
+#page6 .fav-photo-card {
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 82vw !important;
+    max-height: 62vh !important;
+
+    padding: 10px !important;
+
+    background: white !important;
+
+    border-radius: 28px !important;
+
+    box-sizing: border-box !important;
+
+    box-shadow:
+        10px 12px 0 #f6b5c7,
+        0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* IMAGE KEEPS ITS ORIGINAL SHAPE */
+
+#page6 .fav-photo-card img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 78vw !important;
+    max-height: 58vh !important;
+
+    object-fit: contain !important;
+
+    border-radius: 20px !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #page6 .fav-photo-card {
+        width: auto !important;
+        height: auto !important;
+
+        max-width: 86vw !important;
+        max-height: 58vh !important;
+    }
+
+    #page6 .fav-photo-card img {
+        width: auto !important;
+        height: auto !important;
+
+        max-width: 80vw !important;
+        max-height: 54vh !important;
+
+        object-fit: contain !important;
+    }
+}
+
+/* =========================================
+   PAGE 8 - HOW WELL DO U KNOW US?
+========================================= */
+
+#page8.quiz-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    transform: translateX(100%);
+    z-index: 8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    );
+
+    transition: transform 0.8s ease;
+}
+
+
+/* DECORATIONS */
+
+#page8 .quiz-deco {
+    position: absolute;
+    color: #ed4e73;
+    pointer-events: none;
+}
+
+#page8 .quiz-heart-1 {
+    top: 8%;
+    left: 9%;
+    font-size: 42px;
+    transform: rotate(-15deg);
+}
+
+#page8 .quiz-star-1 {
+    top: 13%;
+    right: 10%;
+    font-size: 31px;
+}
+
+#page8 .quiz-heart-2 {
+    bottom: 10%;
+    right: 8%;
+    font-size: 30px;
+    transform: rotate(15deg);
+}
+
+#page8 .quiz-star-2 {
+    bottom: 15%;
+    left: 9%;
+    font-size: 26px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+#page8 .quiz-intro {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page8 .quiz-small {
+    margin: 0 0 12px;
+
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+
+    color: #80545f;
+}
+
+#page8 .quiz-intro h2 {
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: #ed4e73;
+
+    text-shadow: 3px 3px 0 #f8c1cf;
+}
+
+#page8 .quiz-intro-text {
+    margin: 25px 0;
+
+    font-family: "Caveat", cursive;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: #76515c;
+}
+
+
+/* START BUTTON */
+
+#page8 .quiz-start-btn {
+    margin-top: 8px;
+
+    padding: 14px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ed4e73;
+    color: white;
+
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 700;
+
+    box-shadow: 5px 6px 0 #f5b4c5;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+#page8 .quiz-start-btn:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+#page8 .quiz-box {
+    display: none;
+
+    width: min(500px, 90vw);
+
+    padding: 30px 23px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 3px solid #f2a6b9;
+    border-radius: 28px;
+
+    box-shadow:
+        8px 9px 0 #f6c0ce,
+        0 15px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* QUESTION NUMBER */
+
+#page8 .quiz-progress {
+    margin: 0 0 15px;
+
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #ed4e73;
+
+    letter-spacing: 1px;
+}
+
+
+/* QUESTION */
+
+#page8 .quiz-box h3 {
+    margin: 0 0 25px;
+
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    line-height: 1.2;
+
+    color: #714d58;
+}
+
+
+/* ANSWERS */
+
+#page8 .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+#page8 .quiz-option {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 2px solid #f3a7ba;
+    border-radius: 22px;
+
+    background: #fff7f9;
+    color: #714d58;
+
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+#page8 .quiz-option:active {
+    transform: scale(0.97);
+}
+
+
+/* CORRECT */
+
+#page8 .quiz-option.correct {
+    background: #dff5df;
+    border-color: #83c98b;
+}
+
+
+/* WRONG */
+
+#page8 .quiz-option.wrong {
+    background: #ffdfe5;
+    border-color: #ed4e73;
+}
+
+
+/* REACTION */
+
+#page8 .quiz-reaction {
+    min-height: 35px;
+
+    margin: 18px 0 5px;
+
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 700;
+
+    color: #ed4e73;
+}
+
+
+/* NEXT */
+
+#page8 .quiz-next-btn {
+    display: none;
+
+    margin: 13px auto 0;
+
+    padding: 11px 28px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #ed4e73;
+    color: white;
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 4px 5px 0 #f5b4c5;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+#page8 .quiz-result {
+    display: none;
+
+    width: min(470px, 90vw);
+
+    padding: 35px 25px;
+
+    box-sizing: border-box;
+
+    background: rgba(255,255,255,0.95);
+
+    border: 3px solid #f2a6b9;
+    border-radius: 30px;
+
+    box-shadow:
+        9px 10px 0 #f6c0ce,
+        0 15px 30px rgba(0,0,0,0.10);
+}
+
+#page8 .result-small {
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+
+    color: #76515c;
+}
+
+#page8 #resultScore {
+    margin: 10px 0;
+
+    font-family: "Pacifico", cursive;
+    font-size: 55px;
+
+    color: #ed4e73;
+}
+
+#page8 #resultTitle {
+    margin: 5px 0 18px;
+
+    font-family: "Pacifico", cursive;
+    font-size: 30px;
+    font-weight: 400;
+
+    color: #ed4e73;
+}
+
+#page8 #resultMessage {
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+
+    color: #76515c;
+}
+
+#page8 .boyfriend-status {
+    margin-top: 25px;
+
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #ed4e73;
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #page8.quiz-page {
+        padding: 20px 15px;
+    }
+
+    #page8 .quiz-intro h2 {
+        font-size: 38px;
+    }
+
+    #page8 .quiz-intro-text {
+        font-size: 24px;
+    }
+
+    #page8 .quiz-box {
+        width: 92vw;
+        padding: 26px 19px;
+    }
+
+    #page8 .quiz-box h3 {
+        font-size: 27px;
+    }
+
+    #page8 .quiz-option {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    #page8 .quiz-reaction {
+        font-size: 21px;
+    }
+
+    #page8 #resultScore {
+        font-size: 48px;
+    }
+
+    #page8 #resultTitle {
+        font-size: 27px;
+    }
+}
+
+/* =========================================
+   PAGE 9 - OPEN WHEN
+========================================= */
+
+#page9.open-when-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    transform: translateX(100%);
+    z-index: 9;
+
+    padding: 30px 18px 50px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    text-align: center;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #dff3f8 0px,
+        #dff3f8 35px,
+        #ffffff 35px,
+        #ffffff 70px
+    );
+
+    transition: transform 0.8s ease;
+}
+
+
+/* MAIN CONTAINER */
+
+#page9 .open-when-container {
+    width: min(520px, 94vw);
+    margin: 25px auto;
+}
+
+
+/* SMALL TEXT */
+
+#page9 .ow-small {
+    margin: 0 0 5px;
+
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+
+    color: #76515c;
+}
+
+
+/* TITLE */
+
+#page9 h2 {
+    margin: 5px 0 12px;
+
+    font-family: "Pacifico", cursive;
+    font-size: 46px;
+    font-weight: 400;
+
+    color: #ed4e73;
+
+    text-shadow: 3px 3px 0 #f8c1cf;
+}
+
+
+/* SUBTITLE */
+
+#page9 .ow-subtitle {
+    max-width: 420px;
+    margin: 0 auto 30px;
+
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: #76515c;
+}
+
+
+/* =========================================
+   ENVELOPES
+========================================= */
+
+#page9 .envelope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+
+    width: 100%;
+}
+
+
+#page9 .envelope {
+    min-height: 135px;
+
+    padding: 18px 12px;
+
+    border: 3px solid #f2a6b9;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.96);
+
+    box-shadow:
+        6px 7px 0 #f6c0ce,
+        0 10px 20px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    color: #76515c;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#page9 .envelope:active {
+    transform: scale(0.95);
+
+    box-shadow:
+        3px 4px 0 #f6c0ce;
+}
+
+
+#page9 .envelope-icon {
+    font-size: 38px;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+#page9 .ow-deco {
+    position: absolute;
+
+    color: #ed4e73;
+
+    pointer-events: none;
+}
+
+
+#page9 .ow-d1 {
+    top: 7%;
+    left: 6%;
+
+    font-size: 37px;
+
+    transform: rotate(-15deg);
+}
+
+
+#page9 .ow-d2 {
+    top: 12%;
+    right: 7%;
+
+    font-size: 28px;
+}
+
+
+#page9 .ow-d3 {
+    bottom: 8%;
+    right: 6%;
+
+    font-size: 29px;
+}
+
+
+#page9 .ow-d4 {
+    bottom: 13%;
+    left: 7%;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   LETTER POPUP
+========================================= */
+
+#page9 .letter-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background: rgba(84, 61, 68, 0.35);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 100;
+}
+
+
+/* ACTUAL LETTER */
+
+#page9 .mini-letter {
+    position: relative;
+
+    width: min(470px, 88vw);
+    max-height: 78vh;
+
+    padding: 35px 27px 30px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    background: #fffdf9;
+
+    border: 3px solid #f1a8ba;
+    border-radius: 25px;
+
+    box-shadow:
+        8px 9px 0 #f6c0ce,
+        0 18px 40px rgba(0,0,0,0.18);
+
+    text-align: left;
+}
+
+
+/* X BUTTON */
+
+#page9 .close-letter {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+    background: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 31px;
+
+    color: #ed4e73;
+
+    cursor: pointer;
+}
+
+
+/* OPEN WHEN */
+
+#page9 .mini-letter-label {
+    margin: 0 0 2px;
+
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+
+    color: #a77984;
+}
+
+
+/* LETTER TITLE */
+
+#page9 .mini-letter h3 {
+    margin: 0 0 22px;
+
+    font-family: "Pacifico", cursive;
+    font-size: 29px;
+    font-weight: 400;
+
+    color: #ed4e73;
+}
+
+
+/* LETTER MESSAGE */
+
+#page9 .mini-letter-message {
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.35;
+
+    color: #704f58;
+}
+
+
+#page9 .mini-letter-message p {
+    margin: 0 0 17px;
+}
+
+
+/* SIGNATURE */
+
+#page9 .mini-sign {
+    margin: 25px 0 0;
+
+    text-align: right;
+
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #ed4e73;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #page9.open-when-page {
+        padding: 25px 14px 45px;
+    }
+
+
+    #page9 h2 {
+        font-size: 39px;
+    }
+
+
+    #page9 .ow-subtitle {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+
+    #page9 .envelope-grid {
+        gap: 14px;
+    }
+
+
+    #page9 .envelope {
+        min-height: 125px;
+
+        padding: 15px 9px;
+
+        font-size: 18px;
+    }
+
+
+    #page9 .envelope-icon {
+        font-size: 34px;
+    }
+
+
+    #page9 .mini-letter {
+        width: 92vw;
+        max-height: 80vh;
+
+        padding: 32px 22px 27px;
+    }
+
+
+    #page9 .mini-letter h3 {
+        font-size: 26px;
+    }
+
+
+    #page9 .mini-letter-message {
+        font-size: 21px;
+    }
+
+}
+
+/* =========================================
+   PAGE 8 → PAGE 9 BUTTON
+========================================= */
+
+#page8 .open-letters-btn {
+    margin-top: 22px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 28px;
+
+    background: #ed4e73;
+    color: white;
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 700;
+
+    box-shadow: 5px 6px 0 #f5b4c5;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+#page8 .open-letters-btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   PAGE 8 → PAGE 9 BUTTON
+========================================= */
+
+#page8 .open-letters-btn {
+    margin-top: 22px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 28px;
+
+    background: #ed4e73;
+    color: white;
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 700;
+
+    box-shadow: 5px 6px 0 #f5b4c5;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+#page8 .open-letters-btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   FINAL PAGE 9 → SCORE BUTTON
+========================================= */
+
+#page9 .final-score-btn {
+    display: block;
+
+    margin: 35px auto 20px;
+    padding: 13px 28px;
+
+    border: none;
+    border-radius: 28px;
+
+    background: #ed4e73;
+    color: white;
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 700;
+
+    box-shadow: 5px 6px 0 #f5b4c5;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#page9 .final-score-btn:active {
+    transform: scale(0.95);
+    box-shadow: 3px 4px 0 #f5b4c5;
+}
+
+
+/* =========================================
+   FINAL SCREENSHOT MESSAGE
+========================================= */
+
+#page8 .screenshot-message {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 22px auto 3px;
+    padding: 15px 14px;
+
+    background: #fff0f4;
+
+    border: 2px dashed #ed4e73;
+    border-radius: 20px;
+
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-align: center;
+
+    color: #ed4e73;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #page9 .final-score-btn {
+        margin-top: 30px;
+
+        padding: 12px 24px;
+
+        font-size: 20px;
+    }
+
+    #page8 .screenshot-message {
+        margin-top: 18px;
+
+        padding: 13px 11px;
+
+        font-size: 21px;
+    }
+
+}
